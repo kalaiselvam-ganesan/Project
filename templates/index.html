@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form action="calculate" method="post">
+
+  {% csrf_token %}
+
+<div class="header">
+  <h2>EMI Calculator</h2>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+  <p align="center"><b>Loan Amount : $</b>
+  		<input type="number" id="amt" placeholder="Enter amount...$" name="num1">
+          </p>
+  <p align="center"><b>Rate (Interest) : %</b>
+  		<input type="number" id="Rt" placeholder="Enter Interest...%" name="num2">
+           </p>
+   <p align="center"><b>Months (Duration / Time) :</b>
+   		<input type="number" id="Tm" placeholder="Enter Month..." name="num3">
+    	  </p>
+    <p align="center">
+       <input type="submit" value="Calculate">
+         </p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <p align="center" font-family=" Georgia, serif"><b>EMI Per Month : $ <br> {{emi}} </b>
+           </p>
+    </div>
+</form>
+
+
+
+{% endblock %}
+
+
+
